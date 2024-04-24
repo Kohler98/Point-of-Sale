@@ -1,0 +1,214 @@
+﻿using Sol_PuntoVenta.Negocio;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Sol_PuntoVenta.Presentacion.Procesos
+{
+    public partial class Frm_Registro_Pedidos : Form
+    {
+        public Frm_Registro_Pedidos()
+        {
+            InitializeComponent();
+        }
+        #region "Mis Variables"
+        int nCodigo_pv = 0;
+        int nCodigo_us = 0;
+        int nCodigo_tu = 0;
+ 
+        #endregion
+
+        #region "Mis variables y propiedades"
+        private int Codigo_me;
+        private string Descripcion_me;
+        private Image Estado;
+        private int Codigo_pv;
+        private string Descripcion_pv;
+        private int Codigo_us;
+        private int Codigo_tu;
+        private string Fecha_trabajo;
+
+        public int Codigo_me1 { get => Codigo_me; set => Codigo_me = value; }
+        public string Descripcion_me1 { get => Descripcion_me; set => Descripcion_me = value; }
+        public Image Estado1 { get => Estado; set => Estado = value; }
+        public int Codigo_pv1 { get => Codigo_pv; set => Codigo_pv = value; }
+        public string Descripcion_pv1 { get => Descripcion_pv; set => Descripcion_pv = value; }
+        public int Codigo_us1 { get => Codigo_us; set => Codigo_us = value; }
+        public int Codigo_tu1 { get => Codigo_tu; set => Codigo_tu = value; }
+        public string Fecha_trabajo1 { get => Fecha_trabajo; set => Fecha_trabajo = value; }
+        #endregion
+        #region "Mis Metodos"
+        private void Formato_pv()
+        {
+
+            Dgv_Listado1.Columns[0].Visible = false;
+            Dgv_Listado1.Columns[1].Width = 394;
+            Dgv_Listado1.Columns[1].HeaderText = "PUNTO DE VENTA";
+
+        }
+        private void Listado_pv(string cTexto)
+        {
+            try
+            {
+                Dgv_Listado1.DataSource = N_Registro_Pedidos.Listado_pv(cTexto);
+                Formato_pv();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+        private void Selecciona_item_pv()
+        {
+            if (string.IsNullOrEmpty(Convert.ToString(Dgv_Listado1.CurrentRow.Cells["codigo_pv"].Value)))
+            {
+                MessageBox.Show("Selecciona un registro",
+                                "Aviso del Sistema",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+
+                Txt_punto_venta.Text = (string)Dgv_Listado1.CurrentRow.Cells["descripcion_pv"].Value;
+                nCodigo_pv = (int)Dgv_Listado1.CurrentRow.Cells["codigo_pv"].Value;
+            }
+        }
+
+        private void Estado_FechaTurno_pv(int nCodigo_pv)
+        {
+            DataTable Tablax = new DataTable();
+            Tablax = N_Registro_Pedidos.Estado_turno_pv(nCodigo_pv);
+            if (Tablax.Rows.Count > 0)
+            {
+                string cFecha_ct = Convert.ToString(Tablax.Rows[0][0]);
+                Txt_fecha_trabajo.Text = cFecha_ct.Substring(0,cFecha_ct.Length -14);
+                nCodigo_tu = Convert.ToInt32(Tablax.Rows[0][1]);
+                Txt_turno.Text = Convert.ToString(Tablax.Rows[0][2]);
+                Txt_estado.Text = Convert.ToString(Tablax.Rows[0][4]);
+                if (Txt_estado.Text.Trim() =="Cerrado")
+                {
+                    Lbl_mensaje.Visible = true;
+                }
+                else
+                {
+                    Lbl_mensaje.Visible =false;
+                }
+            }
+            else
+            {
+                Txt_fecha_trabajo.Text = "Ninguno";
+                Txt_turno.Text = "Ninguno";
+                Txt_estado.Text = "Ninguno";
+                Lbl_mensaje.Visible = false;
+            }
+        }
+
+        public void LLenarPuntoVenta(FlowLayoutPanel Contenedor)
+        {
+            if (Txt_estado.Text.Trim() == "Abierto")
+            {
+                Contenedor.Controls.Clear();
+                byte[] bImagen1 = new byte[0];
+                bImagen1 = N_Registro_Pedidos.Imagen_estado_me(1);
+                MemoryStream ms1 = new MemoryStream(bImagen1);
+
+                byte[] bImagen2 = new byte[0];
+                bImagen2 = N_Registro_Pedidos.Imagen_estado_me(2);
+                MemoryStream ms2 = new MemoryStream(bImagen2);
+
+                DataTable Tabla = new DataTable();
+                Tabla = N_Registro_Pedidos.Mostrar_me_rp(nCodigo_pv);
+                
+                for(int i = 0; i < Tabla.Rows.Count; i++)
+                {
+                    Codigo_me = Convert.ToInt32(Tabla.Rows[i][0]);
+                    Descripcion_me = Convert.ToString(Tabla.Rows[i][1]);
+
+                    // verificar si la mesa esta disponible
+                    if (Convert.ToInt32(Tabla.Rows[i][2]) >= 1) // disponible
+                    {
+                        Estado = Image.FromStream(ms1);
+                    }
+                    else
+                    {
+                        Estado = Image.FromStream(ms2);
+
+                    }
+
+                    Codigo_pv = Convert.ToInt32(Tabla.Rows[i][3]);
+                    Descripcion_pv = Convert.ToString(Tabla.Rows[i][4]);
+                    Codigo_us = nCodigo_us;
+                    Codigo_tu = nCodigo_tu;
+                    Fecha_trabajo = Txt_fecha_trabajo.Text.Trim();
+                    // cear la mesa para cargar los datos
+                    Controles.MiMesa oMesa = new Controles.MiMesa();
+                    oMesa.Codigo = Codigo_me;
+                    oMesa.Descripcion = Descripcion_me;
+                    oMesa.Disponible = Estado;
+                    oMesa.Codigo_pv = Codigo_pv;
+                    oMesa.Descripcion_pv = Descripcion_pv;
+                    oMesa.Codigo_us = Codigo_us;
+                    oMesa.Codigo_tu = Codigo_tu;
+                    oMesa.Fecha_trabajo = Fecha_trabajo;
+                    //añadir la mesa al control
+                    Contenedor.Controls.Add(oMesa);
+
+                }
+            }
+
+        }
+        #endregion
+        private void Btn_salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Btn_lupa_Click(object sender, EventArgs e)
+        {
+            Pnl_Listado1.Visible = true;
+        }
+
+        private void Btn_retornar1_Click(object sender, EventArgs e)
+        {
+            Pnl_Listado1.Visible =false;
+        }
+
+        private void Dgv_Listado1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Selecciona_item_pv();
+            Estado_FechaTurno_pv(nCodigo_pv);
+            Pnl_Listado1.Visible=false;
+            flowLayoutPanel1.Controls.Clear();
+            LLenarPuntoVenta(flowLayoutPanel1);
+        }
+
+        private void Frm_Registro_Pedidos_Load(object sender, EventArgs e)
+        {
+            Listado_pv("%");
+
+            Lbl_mensaje.Text = "*El turno del punto de venta se encuentra cerrado. Solicite al Administrador la apertura de una nueva fecha de trabajo y/o turno";
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (nCodigo_pv > 0)
+            {
+                Estado_FechaTurno_pv(nCodigo_pv);
+                LLenarPuntoVenta(flowLayoutPanel1);
+
+            }
+
+        }
+    }
+}
