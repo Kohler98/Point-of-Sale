@@ -45,6 +45,7 @@
     <Compile Include="D_Area_Despacho.cs" />
     <Compile Include="D_Cierres_Turnos.cs" />
     <Compile Include="D_Familias.cs" />
+    <Compile Include="D_Generic.cs" />
     <Compile Include="D_Login.cs" />
     <Compile Include="D_Marcas.cs" />
     <Compile Include="D_Mesas.cs" />

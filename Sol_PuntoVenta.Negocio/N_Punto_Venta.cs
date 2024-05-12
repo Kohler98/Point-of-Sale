@@ -12,10 +12,14 @@ namespace Sol_PuntoVenta.Negocio
 {
     public class N_Punto_Venta
     {
+        private static string error = "";
         public static DataTable Listado_pv(string cTexto)
         {
-            D_Punto_Venta Datos = new D_Punto_Venta();
-            return Datos.Listado_pv(cTexto);
+            SqlParameter[] SqlParams = new SqlParameter[1];
+            SqlParams[0] = new SqlParameter("@cTexto", SqlDbType.VarChar);
+            SqlParams[0].Value = cTexto;
+            D_Generic Datos = new D_Generic();
+            return Datos.Retorna_consulta("USP_Listado_pv", SqlParams);
         }
 
         public static string Guardar_pv(int nOpcion, E_Punto_Venta oPropiedad)

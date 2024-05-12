@@ -12,10 +12,14 @@ namespace Sol_PuntoVenta.Negocio
 {
     public class N_Area_Despacho
     {
+        private static string error = "";
         public static DataTable Listado_ad(string cTexto)
         {
-            D_Area_Despacho Datos = new D_Area_Despacho();
-            return Datos.Listado_ad(cTexto);
+            SqlParameter[] SqlParams = new SqlParameter[1];
+            SqlParams[0] = new SqlParameter("@cTexto", SqlDbType.VarChar);
+            SqlParams[0].Value = cTexto;
+            D_Generic Datos = new D_Generic();
+            return Datos.Retorna_consulta("USP_Listado_ad", SqlParams);
         }
 
         public static string Guardar_ad(int nOpcion, E_Area_Despacho oPropiedad)

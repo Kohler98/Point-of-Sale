@@ -12,10 +12,14 @@ namespace Sol_PuntoVenta.Negocio
 {
     public class N_SubFamilias
     {
+        private static string error = "";
         public static DataTable Listado_sf(string cTexto)
         {
-            D_SubFamilias Datos = new D_SubFamilias();
-            return Datos.Listado_sf(cTexto);
+            SqlParameter[] SqlParams = new SqlParameter[1];
+            SqlParams[0] = new SqlParameter("@cTexto", SqlDbType.VarChar);
+            SqlParams[0].Value = cTexto;
+            D_Generic Datos = new D_Generic();
+            return Datos.Retorna_consulta("USP_Listado_sf", SqlParams);
         }
 
         public static string Guardar_sf(int nOpcion, E_SubFamilias oPropiedad)
