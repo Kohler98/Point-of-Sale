@@ -14,8 +14,11 @@ namespace Sol_PuntoVenta.Negocio
     {
         public static DataTable Listado_sf(string cTexto)
         {
-            D_SubFamilias Datos = new D_SubFamilias();
-            return Datos.Listado_sf(cTexto);
+            SqlParameter[] SqlParams = new SqlParameter[1];
+            SqlParams[0] = new SqlParameter("@cTexto", SqlDbType.VarChar);
+            SqlParams[0].Value = cTexto;
+            D_Generic Datos = new D_Generic();
+            return Datos.Retorna_consulta("USP_Listado_sf", SqlParams);
         }
 
         public static string Guardar_sf(int nOpcion, E_SubFamilias oPropiedad)
@@ -31,8 +34,11 @@ namespace Sol_PuntoVenta.Negocio
         }
         public static DataTable Listado_fa(string cTexto)
         {
-            D_Familias Datos = new D_Familias();
-            return Datos.Listado_fa(cTexto);
+            SqlParameter[] SqlParams = new SqlParameter[1];
+            SqlParams[0] = new SqlParameter("@cTexto", SqlDbType.VarChar);
+            SqlParams[0].Value = cTexto;
+            D_Generic Datos = new D_Generic();
+            return Datos.Retorna_consulta("USP_Listado_fa", SqlParams);
         }
     }
 }
