@@ -45,15 +45,13 @@
     <Compile Include="D_Area_Despacho.cs" />
     <Compile Include="D_Cierres_Turnos.cs" />
     <Compile Include="D_Familias.cs" />
+    <Compile Include="D_Generic.cs" />
     <Compile Include="D_Login.cs" />
-    <Compile Include="D_Marcas.cs" />
     <Compile Include="D_Mesas.cs" />
     <Compile Include="D_Mesa_Abierta.cs" />
     <Compile Include="D_Productos.cs" />
-    <Compile Include="D_Punto_Venta.cs" />
     <Compile Include="D_Registro_Pedidos.cs" />
     <Compile Include="D_SubFamilias.cs" />
-    <Compile Include="D_Unidades_Medidas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

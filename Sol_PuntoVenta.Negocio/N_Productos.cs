@@ -3,6 +3,7 @@ using Sol_PuntoVenta.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,23 +31,35 @@ namespace Sol_PuntoVenta.Negocio
         }
         public static DataTable Listado_ma(string cTexto)
         {
-            D_Marcas Datos = new D_Marcas();
-            return Datos.Listado_ma(cTexto);
+            SqlParameter[] SqlParams = new SqlParameter[1];
+            SqlParams[0] = new SqlParameter("@cTexto", SqlDbType.VarChar);
+            SqlParams[0].Value = cTexto;
+            D_Generic Datos = new D_Generic();
+            return Datos.Retorna_consulta("USP_Listado_ma", SqlParams);
         }
         public static DataTable Listado_um(string cTexto)
         {
-            D_Unidades_Medidas Datos = new D_Unidades_Medidas();
-            return Datos.Listado_um(cTexto);
+            SqlParameter[] SqlParams = new SqlParameter[1];
+            SqlParams[0] = new SqlParameter("@cTexto", SqlDbType.VarChar);
+            SqlParams[0].Value = cTexto;
+            D_Generic Datos = new D_Generic();
+            return Datos.Retorna_consulta("USP_Listado_um", SqlParams);
         }
         public static DataTable Listado_sf(string cTexto)
         {
-            D_SubFamilias Datos = new D_SubFamilias();
-            return Datos.Listado_sf(cTexto);
+            SqlParameter[] SqlParams = new SqlParameter[1];
+            SqlParams[0] = new SqlParameter("@cTexto", SqlDbType.VarChar);
+            SqlParams[0].Value = cTexto;
+            D_Generic Datos = new D_Generic();
+            return Datos.Retorna_consulta("USP_Listado_sf", SqlParams);
         }
         public static DataTable Listado_ad(string cTexto)
         {
-            D_Area_Despacho Datos = new D_Area_Despacho();
-            return Datos.Listado_ad(cTexto);
+            SqlParameter[] SqlParams = new SqlParameter[1];
+            SqlParams[0] = new SqlParameter("@cTexto", SqlDbType.VarChar);
+            SqlParams[0].Value = cTexto;
+            D_Generic Datos = new D_Generic();
+            return Datos.Retorna_consulta("USP_Listado_ad", SqlParams);
         }
         public static DataTable Puntos_Ventas_Ok(int nOpcion, int nCodigo_pr)
         {

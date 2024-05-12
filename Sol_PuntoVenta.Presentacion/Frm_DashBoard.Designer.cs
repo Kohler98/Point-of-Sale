@@ -109,7 +109,7 @@
             this.Pnl_menu.Dock = System.Windows.Forms.DockStyle.Left;
             this.Pnl_menu.Location = new System.Drawing.Point(0, 0);
             this.Pnl_menu.Name = "Pnl_menu";
-            this.Pnl_menu.Size = new System.Drawing.Size(255, 623);
+            this.Pnl_menu.Size = new System.Drawing.Size(255, 662);
             this.Pnl_menu.TabIndex = 0;
             // 
             // Btn_cerrar_sesion
@@ -603,7 +603,7 @@
             this.Pnl_titulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.Pnl_titulo.Location = new System.Drawing.Point(255, 0);
             this.Pnl_titulo.Name = "Pnl_titulo";
-            this.Pnl_titulo.Size = new System.Drawing.Size(1029, 75);
+            this.Pnl_titulo.Size = new System.Drawing.Size(968, 75);
             this.Pnl_titulo.TabIndex = 1;
             this.Pnl_titulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Pnl_titulo_MouseDown);
             // 
@@ -632,7 +632,7 @@
             this.Btn_cerrar.IconColor = System.Drawing.Color.White;
             this.Btn_cerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Btn_cerrar.IconSize = 20;
-            this.Btn_cerrar.Location = new System.Drawing.Point(984, 0);
+            this.Btn_cerrar.Location = new System.Drawing.Point(923, 0);
             this.Btn_cerrar.Name = "Btn_cerrar";
             this.Btn_cerrar.Size = new System.Drawing.Size(45, 25);
             this.Btn_cerrar.TabIndex = 5;
@@ -650,7 +650,7 @@
             this.Btn_maximizar.IconColor = System.Drawing.Color.White;
             this.Btn_maximizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Btn_maximizar.IconSize = 20;
-            this.Btn_maximizar.Location = new System.Drawing.Point(939, 0);
+            this.Btn_maximizar.Location = new System.Drawing.Point(878, 0);
             this.Btn_maximizar.Name = "Btn_maximizar";
             this.Btn_maximizar.Size = new System.Drawing.Size(45, 25);
             this.Btn_maximizar.TabIndex = 4;
@@ -668,7 +668,7 @@
             this.Btn_minimizar.IconColor = System.Drawing.Color.White;
             this.Btn_minimizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Btn_minimizar.IconSize = 22;
-            this.Btn_minimizar.Location = new System.Drawing.Point(894, 0);
+            this.Btn_minimizar.Location = new System.Drawing.Point(833, 0);
             this.Btn_minimizar.Name = "Btn_minimizar";
             this.Btn_minimizar.Size = new System.Drawing.Size(45, 25);
             this.Btn_minimizar.TabIndex = 3;
@@ -703,9 +703,9 @@
             this.Pnl_baraestado.Controls.Add(this.Pct_usuario);
             this.Pnl_baraestado.Controls.Add(this.Grb_fecha_hora);
             this.Pnl_baraestado.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Pnl_baraestado.Location = new System.Drawing.Point(255, 539);
+            this.Pnl_baraestado.Location = new System.Drawing.Point(255, 578);
             this.Pnl_baraestado.Name = "Pnl_baraestado";
-            this.Pnl_baraestado.Size = new System.Drawing.Size(1029, 84);
+            this.Pnl_baraestado.Size = new System.Drawing.Size(968, 84);
             this.Pnl_baraestado.TabIndex = 2;
             // 
             // Lbl_descripcion_ca
@@ -794,7 +794,7 @@
             this.Pnl_contenido.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Pnl_contenido.Location = new System.Drawing.Point(255, 75);
             this.Pnl_contenido.Name = "Pnl_contenido";
-            this.Pnl_contenido.Size = new System.Drawing.Size(1029, 464);
+            this.Pnl_contenido.Size = new System.Drawing.Size(968, 503);
             this.Pnl_contenido.TabIndex = 3;
             // 
             // panel1
@@ -806,7 +806,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(162, 45);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(708, 271);
+            this.panel1.Size = new System.Drawing.Size(647, 271);
             this.panel1.TabIndex = 0;
             // 
             // label3
@@ -817,7 +817,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(105)))), ((int)(((byte)(141)))));
             this.label3.Location = new System.Drawing.Point(0, 225);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(708, 23);
+            this.label3.Size = new System.Drawing.Size(647, 23);
             this.label3.TabIndex = 2;
             this.label3.Text = "Sistema de Punto de Venta ";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -830,7 +830,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(287, 64);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(141, 121);
+            this.pictureBox1.Size = new System.Drawing.Size(80, 121);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -843,7 +843,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(105)))), ((int)(((byte)(141)))));
             this.label2.Location = new System.Drawing.Point(0, 248);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(708, 23);
+            this.label2.Size = new System.Drawing.Size(647, 23);
             this.label2.TabIndex = 0;
             this.label2.Text = "Version 1.0";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -857,7 +857,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1284, 623);
+            this.ClientSize = new System.Drawing.Size(1223, 662);
             this.Controls.Add(this.Pnl_contenido);
             this.Controls.Add(this.Pnl_baraestado);
             this.Controls.Add(this.Pnl_titulo);

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,8 +13,11 @@ namespace Sol_PuntoVenta.Negocio
     {
         public static DataTable Listado_pv(string cTexto)
         {
-            D_Registro_Pedidos Datos = new D_Registro_Pedidos();
-            return Datos.Listado_pv(cTexto);
+            SqlParameter[] SqlParams = new SqlParameter[1];
+            SqlParams[0] = new SqlParameter("@cTexto", SqlDbType.VarChar);
+            SqlParams[0].Value = cTexto;
+            D_Generic Datos = new D_Generic();
+            return Datos.Retorna_consulta("USP_Listado_pv", SqlParams);
         }
         public static DataTable Estado_turno_pv(int nCodigo_pv)
         {

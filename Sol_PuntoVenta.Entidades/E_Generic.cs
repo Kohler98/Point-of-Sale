@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Sol_PuntoVenta.Entidades
 {
-    public class E_Punto_Venta
+    public class E_Generic
     {
-        public int Codigo_pv {  get; set; }
-        public string Descripcion_pv {  get; set; }
- 
+        public int Codigo { get; set; }
+        public string Descripcion { get; set; }
     }
 }
