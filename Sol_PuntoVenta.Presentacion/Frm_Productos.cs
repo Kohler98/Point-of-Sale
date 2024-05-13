@@ -35,15 +35,15 @@ namespace Sol_PuntoVenta.Presentacion
         {
             Dgv_Listado.Columns[0].Width = 90;
             Dgv_Listado.Columns[0].HeaderText = "CODIGO_PR";
-            Dgv_Listado.Columns[1].Width = 200;
+            Dgv_Listado.Columns[1].Width = 140;
             Dgv_Listado.Columns[1].HeaderText = "PRODUCTO";
-            Dgv_Listado.Columns[2].Width = 150;
+            Dgv_Listado.Columns[2].Width = 130;
             Dgv_Listado.Columns[2].HeaderText = "MARCA";
             Dgv_Listado.Columns[3].Width = 120;
             Dgv_Listado.Columns[3].HeaderText = "MEDIDA";
-            Dgv_Listado.Columns[4].Width = 150;
+            Dgv_Listado.Columns[4].Width = 140;
             Dgv_Listado.Columns[4].HeaderText = "SUBFAMILIA";
-            Dgv_Listado.Columns[5].Width = 150;
+            Dgv_Listado.Columns[5].Width = 140;
             Dgv_Listado.Columns[5].HeaderText = "P UNITARIO";
             Dgv_Listado.Columns[6].Width = 200;
             Dgv_Listado.Columns[6].HeaderText = "AREA DESPACHO";

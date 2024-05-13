@@ -22,16 +22,28 @@ namespace Sol_PuntoVenta.Negocio
             return Datos.Retorna_consulta("USP_Listado_pv", SqlParams);
         }
 
-        public static string Guardar_pv(int nOpcion, E_Punto_Venta oPropiedad)
+        public static string Guardar_pv(int nOpcion, E_Generic oPropiedad)
         {
-            D_Punto_Venta Datos = new D_Punto_Venta();
-            return Datos.Guardar_pv(nOpcion, oPropiedad);
+            SqlParameter[] SqlParams = new SqlParameter[3];
+            SqlParams[0] = new SqlParameter("@nOpcion", SqlDbType.Int);
+            SqlParams[0].Value = nOpcion;
+            SqlParams[1] = new SqlParameter("@nCodigo", SqlDbType.Int);
+            SqlParams[1].Value = oPropiedad.Codigo;
+            SqlParams[2] = new SqlParameter("@cDescripcion", SqlDbType.VarChar);
+            SqlParams[2].Value = oPropiedad.Descripcion;
+            D_Generic Datos = new D_Generic();
+            error = "No se pudo guardar el elemento";
+            return Datos.Envia_Consulta("USP_Guardar_pv", SqlParams, error);
         }
 
         public static string Eliminar_pv(int nCodigo)
         {
-            D_Punto_Venta Datos = new D_Punto_Venta();
-            return Datos.Eliminar_Pv(nCodigo);
+            SqlParameter[] SqlParams = new SqlParameter[1];
+            SqlParams[0] = new SqlParameter("@nCodigo", SqlDbType.Int);
+            SqlParams[0].Value = nCodigo;
+            D_Generic Datos = new D_Generic();
+            error = "No se pudo eliminar el elemento";
+            return Datos.Envia_Consulta("USP_Eliminar_pv", SqlParams, error);
         }
     }
 }

@@ -68,7 +68,7 @@
             this.Pnl_registarpedidos.Dock = System.Windows.Forms.DockStyle.Top;
             this.Pnl_registarpedidos.Location = new System.Drawing.Point(0, 0);
             this.Pnl_registarpedidos.Name = "Pnl_registarpedidos";
-            this.Pnl_registarpedidos.Size = new System.Drawing.Size(1032, 48);
+            this.Pnl_registarpedidos.Size = new System.Drawing.Size(857, 48);
             this.Pnl_registarpedidos.TabIndex = 5;
             // 
             // label3
@@ -86,21 +86,21 @@
             // 
             this.Pnl_superior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.Pnl_superior.Controls.Add(this.Pnl_Listado1);
-            this.Pnl_superior.Controls.Add(this.Lbl_mensaje);
             this.Pnl_superior.Controls.Add(this.Txt_estado);
+            this.Pnl_superior.Controls.Add(this.Btn_salir);
             this.Pnl_superior.Controls.Add(this.label6);
             this.Pnl_superior.Controls.Add(this.Txt_turno);
             this.Pnl_superior.Controls.Add(this.label5);
+            this.Pnl_superior.Controls.Add(this.Lbl_mensaje);
             this.Pnl_superior.Controls.Add(this.Txt_fecha_trabajo);
             this.Pnl_superior.Controls.Add(this.label4);
             this.Pnl_superior.Controls.Add(this.Btn_lupa);
-            this.Pnl_superior.Controls.Add(this.Btn_salir);
             this.Pnl_superior.Controls.Add(this.Txt_punto_venta);
             this.Pnl_superior.Controls.Add(this.label2);
             this.Pnl_superior.Dock = System.Windows.Forms.DockStyle.Top;
             this.Pnl_superior.Location = new System.Drawing.Point(0, 48);
             this.Pnl_superior.Name = "Pnl_superior";
-            this.Pnl_superior.Size = new System.Drawing.Size(1032, 140);
+            this.Pnl_superior.Size = new System.Drawing.Size(857, 140);
             this.Pnl_superior.TabIndex = 6;
             // 
             // Pnl_Listado1
@@ -109,7 +109,7 @@
             this.Pnl_Listado1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Pnl_Listado1.Controls.Add(this.Btn_retornar1);
             this.Pnl_Listado1.Controls.Add(this.Dgv_Listado1);
-            this.Pnl_Listado1.Location = new System.Drawing.Point(124, 3);
+            this.Pnl_Listado1.Location = new System.Drawing.Point(490, 15);
             this.Pnl_Listado1.Name = "Pnl_Listado1";
             this.Pnl_Listado1.Size = new System.Drawing.Size(355, 150);
             this.Pnl_Listado1.TabIndex = 18;
@@ -162,7 +162,7 @@
             this.Lbl_mensaje.ForeColor = System.Drawing.Color.Red;
             this.Lbl_mensaje.Location = new System.Drawing.Point(0, 107);
             this.Lbl_mensaje.Name = "Lbl_mensaje";
-            this.Lbl_mensaje.Size = new System.Drawing.Size(1032, 33);
+            this.Lbl_mensaje.Size = new System.Drawing.Size(857, 33);
             this.Lbl_mensaje.TabIndex = 17;
             this.Lbl_mensaje.Text = "Mensaje";
             this.Lbl_mensaje.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -172,7 +172,7 @@
             // 
             this.Txt_estado.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_estado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Txt_estado.Location = new System.Drawing.Point(746, 61);
+            this.Txt_estado.Location = new System.Drawing.Point(695, 90);
             this.Txt_estado.Name = "Txt_estado";
             this.Txt_estado.ReadOnly = true;
             this.Txt_estado.Size = new System.Drawing.Size(142, 27);
@@ -184,7 +184,7 @@
             // 
             this.label6.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(746, 35);
+            this.label6.Location = new System.Drawing.Point(695, 64);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(142, 23);
             this.label6.TabIndex = 15;
@@ -195,7 +195,7 @@
             // 
             this.Txt_turno.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_turno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Txt_turno.Location = new System.Drawing.Point(598, 61);
+            this.Txt_turno.Location = new System.Drawing.Point(547, 90);
             this.Txt_turno.Name = "Txt_turno";
             this.Txt_turno.ReadOnly = true;
             this.Txt_turno.Size = new System.Drawing.Size(142, 27);
@@ -207,7 +207,7 @@
             // 
             this.label5.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(598, 35);
+            this.label5.Location = new System.Drawing.Point(547, 64);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(142, 23);
             this.label5.TabIndex = 13;
@@ -218,10 +218,10 @@
             // 
             this.Txt_fecha_trabajo.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_fecha_trabajo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Txt_fecha_trabajo.Location = new System.Drawing.Point(387, 61);
+            this.Txt_fecha_trabajo.Location = new System.Drawing.Point(547, 28);
             this.Txt_fecha_trabajo.Name = "Txt_fecha_trabajo";
             this.Txt_fecha_trabajo.ReadOnly = true;
-            this.Txt_fecha_trabajo.Size = new System.Drawing.Size(205, 27);
+            this.Txt_fecha_trabajo.Size = new System.Drawing.Size(290, 27);
             this.Txt_fecha_trabajo.TabIndex = 12;
             this.Txt_fecha_trabajo.Text = "Fecha de Trabajo x";
             this.Txt_fecha_trabajo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -230,7 +230,7 @@
             // 
             this.label4.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(387, 35);
+            this.label4.Location = new System.Drawing.Point(547, 2);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(205, 23);
             this.label4.TabIndex = 11;
@@ -244,7 +244,7 @@
             this.Btn_lupa.FlatAppearance.BorderSize = 0;
             this.Btn_lupa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_lupa.Image = ((System.Drawing.Image)(resources.GetObject("Btn_lupa.Image")));
-            this.Btn_lupa.Location = new System.Drawing.Point(318, 57);
+            this.Btn_lupa.Location = new System.Drawing.Point(478, 50);
             this.Btn_lupa.Name = "Btn_lupa";
             this.Btn_lupa.Size = new System.Drawing.Size(38, 34);
             this.Btn_lupa.TabIndex = 10;
@@ -258,7 +258,7 @@
             this.Btn_salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_salir.ImageKey = "salir.png";
             this.Btn_salir.ImageList = this.imageList1;
-            this.Btn_salir.Location = new System.Drawing.Point(921, 28);
+            this.Btn_salir.Location = new System.Drawing.Point(19, 6);
             this.Btn_salir.Name = "Btn_salir";
             this.Btn_salir.Size = new System.Drawing.Size(99, 63);
             this.Btn_salir.TabIndex = 9;
@@ -282,7 +282,7 @@
             // 
             this.Txt_punto_venta.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_punto_venta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Txt_punto_venta.Location = new System.Drawing.Point(12, 61);
+            this.Txt_punto_venta.Location = new System.Drawing.Point(172, 54);
             this.Txt_punto_venta.Name = "Txt_punto_venta";
             this.Txt_punto_venta.Size = new System.Drawing.Size(300, 27);
             this.Txt_punto_venta.TabIndex = 1;
@@ -293,7 +293,7 @@
             // 
             this.label2.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(12, 35);
+            this.label2.Location = new System.Drawing.Point(172, 28);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(300, 23);
             this.label2.TabIndex = 0;
@@ -307,7 +307,7 @@
             this.Pnl_mesas.Dock = System.Windows.Forms.DockStyle.Top;
             this.Pnl_mesas.Location = new System.Drawing.Point(0, 188);
             this.Pnl_mesas.Name = "Pnl_mesas";
-            this.Pnl_mesas.Size = new System.Drawing.Size(1032, 40);
+            this.Pnl_mesas.Size = new System.Drawing.Size(857, 40);
             this.Pnl_mesas.TabIndex = 7;
             // 
             // label1
@@ -328,7 +328,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 228);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1032, 372);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(857, 372);
             this.flowLayoutPanel1.TabIndex = 8;
             // 
             // timer1
@@ -341,7 +341,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1032, 600);
+            this.ClientSize = new System.Drawing.Size(857, 600);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.Pnl_mesas);
             this.Controls.Add(this.Pnl_superior);

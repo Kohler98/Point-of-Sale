@@ -27,9 +27,9 @@ namespace Sol_PuntoVenta.Presentacion
         #region "Mis Metodos"
          private void Formato_um()
         {
-            Dgv_Listado.Columns[0].Width = 100;
+            Dgv_Listado.Columns[0].Width = 240;
             Dgv_Listado.Columns[0].HeaderText = "CODIGO_UM";
-            Dgv_Listado.Columns[1].Width = 394;
+            Dgv_Listado.Columns[1].Width = 404;
             Dgv_Listado.Columns[1].HeaderText = "UNIDADES DE MEDIDAS";
         }
 
@@ -135,9 +135,9 @@ namespace Sol_PuntoVenta.Presentacion
                 else
                 {
                     string Rpta = "";
-                    E_Unidades_Medidas oPropiedad = new E_Unidades_Medidas();
-                    oPropiedad.Codigo_um = nCodigo;
-                    oPropiedad.Descripcion_um = Txt_descripcion.Text.Trim();
+                    E_Generic oPropiedad = new E_Generic();
+                    oPropiedad.Codigo = nCodigo;
+                    oPropiedad.Descripcion = Txt_descripcion.Text.Trim();
                     Rpta = N_Unidades_Medidas.Guardar_um(EstadoGuarda, oPropiedad);
                     if (Rpta.Equals("OK"))
                     {

@@ -109,7 +109,7 @@
             this.Pnl_menu.Dock = System.Windows.Forms.DockStyle.Left;
             this.Pnl_menu.Location = new System.Drawing.Point(0, 0);
             this.Pnl_menu.Name = "Pnl_menu";
-            this.Pnl_menu.Size = new System.Drawing.Size(255, 623);
+            this.Pnl_menu.Size = new System.Drawing.Size(255, 672);
             this.Pnl_menu.TabIndex = 0;
             // 
             // Btn_cerrar_sesion
@@ -703,7 +703,7 @@
             this.Pnl_baraestado.Controls.Add(this.Pct_usuario);
             this.Pnl_baraestado.Controls.Add(this.Grb_fecha_hora);
             this.Pnl_baraestado.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Pnl_baraestado.Location = new System.Drawing.Point(255, 539);
+            this.Pnl_baraestado.Location = new System.Drawing.Point(255, 588);
             this.Pnl_baraestado.Name = "Pnl_baraestado";
             this.Pnl_baraestado.Size = new System.Drawing.Size(1029, 84);
             this.Pnl_baraestado.TabIndex = 2;
@@ -794,7 +794,7 @@
             this.Pnl_contenido.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Pnl_contenido.Location = new System.Drawing.Point(255, 75);
             this.Pnl_contenido.Name = "Pnl_contenido";
-            this.Pnl_contenido.Size = new System.Drawing.Size(1029, 464);
+            this.Pnl_contenido.Size = new System.Drawing.Size(1029, 513);
             this.Pnl_contenido.TabIndex = 3;
             // 
             // panel1
@@ -857,7 +857,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1284, 623);
+            this.ClientSize = new System.Drawing.Size(1284, 672);
             this.Controls.Add(this.Pnl_contenido);
             this.Controls.Add(this.Pnl_baraestado);
             this.Controls.Add(this.Pnl_titulo);

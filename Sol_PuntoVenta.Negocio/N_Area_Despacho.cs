@@ -24,14 +24,28 @@ namespace Sol_PuntoVenta.Negocio
 
         public static string Guardar_ad(int nOpcion, E_Area_Despacho oPropiedad)
         {
-            D_Area_Despacho Datos = new D_Area_Despacho();
-            return Datos.Guardar_ad(nOpcion, oPropiedad);
+            SqlParameter[] SqlParams = new SqlParameter[4];
+            SqlParams[0] = new SqlParameter("@nOpcion", SqlDbType.Int);
+            SqlParams[0].Value = nOpcion;
+            SqlParams[1] = new SqlParameter("@nCodigo", SqlDbType.Int);
+            SqlParams[1].Value = oPropiedad.Codigo_ad;
+            SqlParams[2] = new SqlParameter("@cDescripcion", SqlDbType.VarChar);
+            SqlParams[2].Value = oPropiedad.Descripcion_ad;
+            SqlParams[3] = new SqlParameter("@cImpresora", SqlDbType.VarChar);
+            SqlParams[3].Value = oPropiedad.Impresora;
+            D_Generic Datos = new D_Generic();
+            error = "No se pudo guardar el elemento";
+            return Datos.Envia_Consulta("USP_Guardar_ad", SqlParams, error);
         }
 
         public static string Eliminar_ad(int nCodigo)
         {
-            D_Area_Despacho Datos = new D_Area_Despacho();
-            return Datos.Eliminar_ad(nCodigo);
+            SqlParameter[] SqlParams = new SqlParameter[1];
+            SqlParams[0] = new SqlParameter("@nCodigo", SqlDbType.Int);
+            SqlParams[0].Value = nCodigo;
+            D_Generic Datos = new D_Generic();
+            error = "No se pudo eliminar el elemento";
+            return Datos.Envia_Consulta("USP_Eliminar_ad", SqlParams, error);
         }
     }
 }

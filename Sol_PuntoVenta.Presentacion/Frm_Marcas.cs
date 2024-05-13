@@ -27,9 +27,9 @@ namespace Sol_PuntoVenta.Presentacion
         #region "Mis Metodos"
          private void Formato_ma()
         {
-            Dgv_Listado.Columns[0].Width = 100;
+            Dgv_Listado.Columns[0].Width = 240;
             Dgv_Listado.Columns[0].HeaderText = "CODIGO_MA";
-            Dgv_Listado.Columns[1].Width = 394;
+            Dgv_Listado.Columns[1].Width = 404;
             Dgv_Listado.Columns[1].HeaderText = "MARCAS";
         }
 
@@ -135,9 +135,9 @@ namespace Sol_PuntoVenta.Presentacion
                 else
                 {
                     string Rpta = "";
-                    E_Marcas oPropiedad = new E_Marcas();
-                    oPropiedad.Codigo_ma = nCodigo;
-                    oPropiedad.Descripcion_ma = Txt_descripcion.Text.Trim();
+                    E_Generic oPropiedad = new E_Generic();
+                    oPropiedad.Codigo = nCodigo;
+                    oPropiedad.Descripcion = Txt_descripcion.Text.Trim();
                     Rpta = N_Marcas.Guardar_ma(EstadoGuarda, oPropiedad);
                     if (Rpta.Equals("OK"))
                     {

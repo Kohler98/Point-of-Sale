@@ -118,7 +118,7 @@ namespace Sol_PuntoVenta.Presentacion
             {
                 nCodigo = (int)Dgv_Listado.CurrentRow.Cells["codigo_me"].Value;
                 Txt_descripcion.Text = (string)Dgv_Listado.CurrentRow.Cells["descripcion_me"].Value;
-                Txt_buscar1.Text = (string)Dgv_Listado.CurrentRow.Cells["descripcion_pv"].Value;
+                Txt_venta.Text = (string)Dgv_Listado.CurrentRow.Cells["descripcion_pv"].Value;
                 nCodigo_pv = (int)Dgv_Listado.CurrentRow.Cells["codigo_pv"].Value;
             }
         }
@@ -187,10 +187,10 @@ namespace Sol_PuntoVenta.Presentacion
                 else
                 {
                     string Rpta = "";
-                    E_Mesas oPropiedad = new E_Mesas();
-                    oPropiedad.Codigo_me = nCodigo;
-                    oPropiedad.Descripcion_me = Txt_descripcion.Text.Trim();
-                    oPropiedad.Codigo_pv = nCodigo_pv;
+                    E_Sub_Generic oPropiedad = new E_Sub_Generic();
+                    oPropiedad.Codigo = nCodigo;
+                    oPropiedad.Descripcion = Txt_descripcion.Text.Trim();
+                    oPropiedad.Codigo_sg = nCodigo_pv;
                     Rpta = N_Mesas.Guardar_me(EstadoGuarda, oPropiedad);
                     if (Rpta.Equals("OK"))
                     {

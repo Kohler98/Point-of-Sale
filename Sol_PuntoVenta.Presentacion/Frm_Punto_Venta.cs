@@ -27,9 +27,9 @@ namespace Sol_PuntoVenta.Presentacion
         #region "Mis Metodos"
          private void Formato_pv()
         {
-            Dgv_Listado.Columns[0].Width = 100;
+            Dgv_Listado.Columns[0].Width = 240;
             Dgv_Listado.Columns[0].HeaderText = "CODIGO_PV";
-            Dgv_Listado.Columns[1].Width = 394;
+            Dgv_Listado.Columns[1].Width = 404;
             Dgv_Listado.Columns[1].HeaderText = "PUNTO DE VENTA";
         }
 
@@ -135,9 +135,9 @@ namespace Sol_PuntoVenta.Presentacion
                 else
                 {
                     string Rpta = "";
-                    E_Punto_Venta oPropiedad = new E_Punto_Venta();
-                    oPropiedad.Codigo_pv = nCodigo;
-                    oPropiedad.Descripcion_pv = Txt_descripcion.Text.Trim();
+                    E_Generic oPropiedad = new E_Generic();
+                    oPropiedad.Codigo = nCodigo;
+                    oPropiedad.Descripcion = Txt_descripcion.Text.Trim();
                     Rpta = N_Punto_Venta.Guardar_pv(EstadoGuarda, oPropiedad);
                     if (Rpta.Equals("OK"))
                     {
@@ -242,6 +242,11 @@ namespace Sol_PuntoVenta.Presentacion
                 oRpt_pv.Txt_p1.Text = Txt_buscar.Text.Trim();
                 oRpt_pv.ShowDialog();
             }
+        }
+
+        private void Btn_salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

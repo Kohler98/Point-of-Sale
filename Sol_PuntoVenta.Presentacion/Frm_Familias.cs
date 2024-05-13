@@ -27,9 +27,9 @@ namespace Sol_PuntoVenta.Presentacion
         #region "Mis Metodos"
          private void Formato_fa()
         {
-            Dgv_Listado.Columns[0].Width = 100;
+            Dgv_Listado.Columns[0].Width = 240;
             Dgv_Listado.Columns[0].HeaderText = "CODIGO_FA";
-            Dgv_Listado.Columns[1].Width = 394;
+            Dgv_Listado.Columns[1].Width = 404;
             Dgv_Listado.Columns[1].HeaderText = "FAMILIA";
 
         }
@@ -136,9 +136,9 @@ namespace Sol_PuntoVenta.Presentacion
                 else
                 {
                     string Rpta = "";
-                    E_Familias oPropiedad = new E_Familias();
-                    oPropiedad.Codigo_fa = nCodigo;
-                    oPropiedad.Descripcion_fa = Txt_descripcion.Text.Trim();
+                    E_Generic oPropiedad = new E_Generic();
+                    oPropiedad.Codigo = nCodigo;
+                    oPropiedad.Descripcion = Txt_descripcion.Text.Trim();
                     Rpta = N_Familias.Guardar_fa(EstadoGuarda, oPropiedad);
                     if (Rpta.Equals("OK"))
                     {

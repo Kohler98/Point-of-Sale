@@ -22,16 +22,28 @@ namespace Sol_PuntoVenta.Negocio
             return Datos.Retorna_consulta("USP_Listado_fa", SqlParams);
         }
 
-        public static string Guardar_fa(int nOpcion, E_Familias oPropiedad)
+        public static string Guardar_fa(int nOpcion, E_Generic oPropiedad)
         {
-            D_Familias Datos = new D_Familias();
-            return Datos.Guardar_fa(nOpcion, oPropiedad);
+            SqlParameter[] SqlParams = new SqlParameter[3];
+            SqlParams[0] = new SqlParameter("@nOpcion", SqlDbType.Int);
+            SqlParams[0].Value = nOpcion;
+            SqlParams[1] = new SqlParameter("@nCodigo", SqlDbType.Int);
+            SqlParams[1].Value = oPropiedad.Codigo;
+            SqlParams[2] = new SqlParameter("@cDescripcion", SqlDbType.VarChar);
+            SqlParams[2].Value = oPropiedad.Descripcion;
+            D_Generic Datos = new D_Generic();
+            error = "No se pudo guardar el elemento";
+            return Datos.Envia_Consulta("USP_Guardar_fa", SqlParams, error);
         }
 
         public static string Eliminar_fa(int nCodigo)
         {
-            D_Familias Datos = new D_Familias();
-            return Datos.Eliminar_fa(nCodigo);
+            SqlParameter[] SqlParams = new SqlParameter[1];
+            SqlParams[0] = new SqlParameter("@nCodigo", SqlDbType.Int);
+            SqlParams[0].Value = nCodigo;
+            D_Generic Datos = new D_Generic();
+            error = "No se pudo eliminar el elemento";
+            return Datos.Envia_Consulta("USP_Eliminar_fa", SqlParams, error);
         }
     }
 }

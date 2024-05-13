@@ -175,6 +175,7 @@ namespace Sol_PuntoVenta.Presentacion.Procesos
 
         private void Btn_lupa_Click(object sender, EventArgs e)
         {
+
             Pnl_Listado1.Visible = true;
         }
 

@@ -11,7 +11,6 @@ namespace Sol_PuntoVenta.Negocio
 {
     public class N_Registro_Pedidos
     {
-        private static string error = "";
         public static DataTable Listado_pv(string cTexto)
         {
             SqlParameter[] SqlParams = new SqlParameter[1];
@@ -22,18 +21,27 @@ namespace Sol_PuntoVenta.Negocio
         }
         public static DataTable Estado_turno_pv(int nCodigo_pv)
         {
-            D_Registro_Pedidos Datos = new D_Registro_Pedidos();
-            return Datos.Estado_turno_pv(nCodigo_pv);
+            SqlParameter[] SqlParams = new SqlParameter[1];
+            SqlParams[0] = new SqlParameter("@nCodigo_pv", SqlDbType.Int);
+            SqlParams[0].Value = nCodigo_pv;
+            D_Generic Datos = new D_Generic();
+            return Datos.Retorna_consulta("USP_Estado_turno_pv", SqlParams);
         }
         public static DataTable Mostrar_me_rp(int nCodigo_pv)
         {
-            D_Registro_Pedidos Datos = new D_Registro_Pedidos();
-            return Datos.Mostrar_me_rp(nCodigo_pv);
+            SqlParameter[] SqlParams = new SqlParameter[1];
+            SqlParams[0] = new SqlParameter("@nCodigo_pv", SqlDbType.Int);
+            SqlParams[0].Value = nCodigo_pv;
+            D_Generic Datos = new D_Generic();
+            return Datos.Retorna_consulta("USP_Mostrar_me_rp", SqlParams);
         }
         public static Byte[] Imagen_estado_me(int nEstado)
         {
-            D_Registro_Pedidos Datos = new D_Registro_Pedidos();
-            return Datos.Imagen_estado_me(nEstado);
+            SqlParameter[] SqlParams = new SqlParameter[1];
+            SqlParams[0] = new SqlParameter("@nEstado", SqlDbType.Int);
+            SqlParams[0].Value = nEstado;
+            D_Generic Datos = new D_Generic();
+            return Datos.Retorna_imagen("USP_Imagen_estado_me", SqlParams);
         }
     }
 }

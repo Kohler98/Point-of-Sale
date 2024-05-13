@@ -24,50 +24,99 @@ namespace Sol_PuntoVenta.Negocio
 
         public static string Guardar_pr(int nOpcion, E_Productos oPropiedad, DataTable DT)
         {
-            D_Productos Datos = new D_Productos();
-            return Datos.Guardar_pr(nOpcion, oPropiedad,DT);
+            SqlParameter[] SqlParams = new SqlParameter[11];
+            SqlParams[0] = new SqlParameter("@nOpcion", SqlDbType.Int);
+            SqlParams[0].Value = nOpcion;
+            SqlParams[1] = new SqlParameter("@nCodigo", SqlDbType.Int);
+            SqlParams[1].Value = oPropiedad.Codigo_pr;
+            SqlParams[2] = new SqlParameter("@cDescripcion_pr", SqlDbType.VarChar);
+            SqlParams[2].Value = oPropiedad.Descripcion_pr;
+            SqlParams[3] = new SqlParameter("@nCodigo_ma", SqlDbType.Int);
+            SqlParams[3].Value = oPropiedad.Codigo_ma;
+            SqlParams[4] = new SqlParameter("@nCodigo_um", SqlDbType.Int);
+            SqlParams[4].Value = oPropiedad.Codigo_um;
+            SqlParams[5] = new SqlParameter("@nCodigo_sf", SqlDbType.Int);
+            SqlParams[5].Value = oPropiedad.Codigo_sf;
+            SqlParams[6] = new SqlParameter("@nCodigo_ad", SqlDbType.Int);
+            SqlParams[6].Value = oPropiedad.Codigo_ad;
+            SqlParams[7] = new SqlParameter("@nPrecio_unitario", SqlDbType.Decimal);
+            SqlParams[7].Value = oPropiedad.Precio_unitario;
+            SqlParams[8] = new SqlParameter("@cObservacion", SqlDbType.VarChar);
+            SqlParams[8].Value = oPropiedad.Observacion;
+            SqlParams[9] = new SqlParameter("@oImagen", SqlDbType.Image);
+            SqlParams[9].Value = oPropiedad.Imagen;
+            SqlParams[10] = new SqlParameter("@Ty_01", SqlDbType.Structured);
+            SqlParams[10].Value = DT;
+            error = "No se pudo guardar el elemento";
+            D_Generic Datos = new D_Generic();
+            return Datos.Envia_Consulta("USP_Guardar_pr", SqlParams, error);
         }
 
         public static string Eliminar_pr(int nCodigo)
         {
-            D_Productos Datos = new D_Productos();
-            return Datos.Eliminar_pr(nCodigo);
+            SqlParameter[] SqlParams = new SqlParameter[1];
+            SqlParams[0] = new SqlParameter("@nCodigo", SqlDbType.Int);
+            SqlParams[0].Value = nCodigo;
+            D_Generic Datos = new D_Generic();
+            error = "No se pudo eliminar el elemento";
+            return Datos.Envia_Consulta("USP_Eliminar_pr", SqlParams, error);
         }
         public static DataTable Listado_ma(string cTexto)
         {
-            D_Marcas Datos = new D_Marcas();
-            return Datos.Listado_ma(cTexto);
+            SqlParameter[] SqlParams = new SqlParameter[1];
+            SqlParams[0] = new SqlParameter("@cTexto", SqlDbType.VarChar);
+            SqlParams[0].Value = cTexto;
+            D_Generic Datos = new D_Generic();
+            return Datos.Retorna_consulta("USP_Listado_ma", SqlParams);
         }
         public static DataTable Listado_um(string cTexto)
         {
-            D_Unidades_Medidas Datos = new D_Unidades_Medidas();
-            return Datos.Listado_um(cTexto);
+            SqlParameter[] SqlParams = new SqlParameter[1];
+            SqlParams[0] = new SqlParameter("@cTexto", SqlDbType.VarChar);
+            SqlParams[0].Value = cTexto;
+            D_Generic Datos = new D_Generic();
+            return Datos.Retorna_consulta("USP_Listado_um", SqlParams);
         }
         public static DataTable Listado_sf(string cTexto)
         {
-            D_SubFamilias Datos = new D_SubFamilias();
-            return Datos.Listado_sf(cTexto);
+            SqlParameter[] SqlParams = new SqlParameter[1];
+            SqlParams[0] = new SqlParameter("@cTexto", SqlDbType.VarChar);
+            SqlParams[0].Value = cTexto;
+            D_Generic Datos = new D_Generic();
+            return Datos.Retorna_consulta("USP_Listado_sf", SqlParams);
         }
         public static DataTable Listado_ad(string cTexto)
         {
-            D_Area_Despacho Datos = new D_Area_Despacho();
-            return Datos.Listado_ad(cTexto);
+            SqlParameter[] SqlParams = new SqlParameter[1];
+            SqlParams[0] = new SqlParameter("@cTexto", SqlDbType.VarChar);
+            SqlParams[0].Value = cTexto;
+            D_Generic Datos = new D_Generic();
+            return Datos.Retorna_consulta("USP_Listado_ad", SqlParams);
         }
         public static DataTable Puntos_Ventas_Ok(int nOpcion, int nCodigo_pr)
         {
-            D_Productos Datos = new D_Productos();
-            return Datos.USP_Puntos_Ventas_Ok(nOpcion,nCodigo_pr);
+            SqlParameter[] SqlParams = new SqlParameter[2];
+            SqlParams[0] = new SqlParameter("@nOpcion", SqlDbType.Int);
+            SqlParams[0].Value = nOpcion;
+            SqlParams[1] = new SqlParameter("@nCodigo_pr", SqlDbType.Int);
+            SqlParams[1].Value = nCodigo_pr;
+            D_Generic Datos = new D_Generic();
+            return Datos.Retorna_consulta("USP_Puntos_Ventas_Ok", SqlParams);
         }
         
         public static Byte[] Mostrar_img( int nCodigo_pr)
         {
-            D_Productos Datos = new D_Productos();
-            return Datos.Mostrar_img(nCodigo_pr);
+            SqlParameter[] SqlParams = new SqlParameter[1];
+            SqlParams[0] = new SqlParameter("@nCodigo_pr", SqlDbType.Int);
+            SqlParams[0].Value = nCodigo_pr;
+            D_Generic Datos = new D_Generic();
+            return Datos.Retorna_imagen("USP_Mostrar_img", SqlParams);
         }
         public static Byte[] Mostrar_img_prod_pred()
         {
-            D_Productos Datos = new D_Productos();
-            return Datos.Mostrar_img_prod_pred();
+            SqlParameter[] SqlParams = null;
+            D_Generic Datos = new D_Generic();
+            return Datos.Retorna_imagen("USP_Mostrar_img_prod_pred", SqlParams);
         }
     }
 }

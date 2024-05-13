@@ -118,7 +118,7 @@ namespace Sol_PuntoVenta.Presentacion
             {
                 nCodigo = (int)Dgv_Listado.CurrentRow.Cells["codigo_sf"].Value;
                 Txt_descripcion.Text = (string)Dgv_Listado.CurrentRow.Cells["descripcion_sf"].Value;
-                Txt_buscar1.Text = (string)Dgv_Listado.CurrentRow.Cells["descripcion_fa"].Value;
+                Txt_familia.Text = (string)Dgv_Listado.CurrentRow.Cells["descripcion_fa"].Value;
                 nCodigo_fa = (int)Dgv_Listado.CurrentRow.Cells["codigo_fa"].Value;
             }
         }
@@ -187,10 +187,10 @@ namespace Sol_PuntoVenta.Presentacion
                 else
                 {
                     string Rpta = "";
-                    E_SubFamilias oPropiedad = new E_SubFamilias();
-                    oPropiedad.Codigo_sf = nCodigo;
-                    oPropiedad.Descripcion_sf = Txt_descripcion.Text.Trim();
-                    oPropiedad.Codigo_fa = nCodigo_fa;
+                    E_Sub_Generic oPropiedad = new E_Sub_Generic();
+                    oPropiedad.Codigo = nCodigo;
+                    oPropiedad.Descripcion = Txt_descripcion.Text.Trim();
+                    oPropiedad.Codigo_sg = nCodigo_fa;
                     Rpta = N_SubFamilias.Guardar_sf(EstadoGuarda, oPropiedad);
                     if (Rpta.Equals("OK"))
                     {
